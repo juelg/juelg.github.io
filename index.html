@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tobias Jülg — Robot Learning Researcher</title>
+  <meta name="description" content="Tobias Jülg is a PhD candidate in robotics at the University of Technology Nuremberg (UTN) and a research intern at Ai2, working on Vision-Language-Action models, reinforcement learning and sim-to-real robot learning.">
+  <meta name="author" content="Tobias Jülg">
+  <link rel="canonical" href="https://tobiasjuelg.de/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tobias Jülg — Robot Learning Researcher">
+  <meta property="og:description" content="Vision-Language-Action models, reinforcement learning and scalable robot learning infrastructure.">
+  <meta property="og:url" content="https://tobiasjuelg.de/">
+  <meta property="og:image" content="https://tobiasjuelg.de/assets/img/tobias.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    // Set theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.dataset.theme = t;
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tobias Jülg",
+    "url": "https://tobiasjuelg.de/",
+    "image": "https://tobiasjuelg.de/assets/img/tobias.jpg",
+    "jobTitle": "PhD Candidate in Robotics",
+    "affiliation": [
+      { "@type": "CollegeOrUniversity", "name": "University of Technology Nuremberg (UTN)" },
+      { "@type": "Organization", "name": "Allen Institute for AI (Ai2)" }
+    ],
+    "sameAs": [
+      "https://github.com/juelg",
+      "https://www.linkedin.com/in/juelg",
+      "https://scholar.google.com/citations?user=sZWmnMsAAAAJ"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <!-- Inline icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M5.24 13.77 12 9.33l6.76 4.44A7 7 0 1 0 5.24 13.77ZM12 0 1 7.25l4.3 2.83a8.98 8.98 0 0 1 13.4 0L23 7.25 12 0Z"/><circle fill="currentColor" cx="12" cy="17" r="5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm18 2-10 7L2 6"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 0v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></g></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-data" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></g></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15ZM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></symbol>
+    <symbol id="i-pypi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></g></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></symbol>
+  </svg>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand"><span class="brand-mark">TJ</span>Tobias Jülg</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#research" class="hide-sm">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#software" class="hide-sm">Software</a>
+        <a href="#datasets" class="hide-sm">Datasets</a>
+        <a href="#about" class="hide-sm">About</a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-moon"><use href="#i-moon"/></svg>
+          <svg class="icon-sun"><use href="#i-sun"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="research">
+      <div class="container hero-grid">
+        <div>
+          <div class="status-pill"><span class="status-dot"></span>PhD Candidate @ UTN · Research Intern @ Ai2</div>
+          <h1>Hi, I'm <span class="gradient-text">Tobi</span>.</h1>
+          <p class="hero-lead">
+            I build robots that learn. I'm a PhD candidate at the
+            <a href="https://www.utn.de/" target="_blank" rel="noopener">University of Technology Nuremberg</a>,
+            advised by <a href="https://www.utn.de/en/person/wolfram-burgard/" target="_blank" rel="noopener">Prof. Wolfram Burgard</a>.
+            My research is on <strong>embodied foundation models</strong>: making
+            <strong>Vision-Language-Action models (VLAs)</strong> robust and reliable through
+            reinforcement-learning-based fine-tuning, scalable synthetic data and sim-to-real transfer
+            across robot embodiments.
+          </p>
+          <p class="hero-lead">
+            Currently, I'm a PhD research intern with the robotics team at the
+            <a href="https://allenai.org/" target="_blank" rel="noopener">Allen Institute for AI (Ai2)</a> in Seattle,
+            advised by <a href="https://homes.cs.washington.edu/~fox/" target="_blank" rel="noopener">Prof. Dieter Fox</a>,
+            working on zero-shot real-to-sim for VLAs and RL-based fine-tuning.
+          </p>
+          <p class="hero-lead">
+            I also care about the infrastructure that makes robot learning reproducible. I lead
+            <a href="https://robotcontrolstack.github.io/" target="_blank" rel="noopener">Robot Control Stack</a>,
+            an open-source ecosystem for robot learning at scale.
+          </p>
+          <ul class="tags" aria-label="Research interests">
+            <li class="tag">Vision-Language-Action Models</li>
+            <li class="tag">Reinforcement Learning</li>
+            <li class="tag">Sim-to-Real</li>
+            <li class="tag">Cross-Embodiment</li>
+            <li class="tag">Robot Learning Infrastructure</li>
+          </ul>
+          <div class="socials">
+            <a class="btn btn--primary" href="https://scholar.google.com/citations?hl=en&amp;user=sZWmnMsAAAAJ" target="_blank" rel="noopener"><svg><use href="#i-scholar"/></svg>Google Scholar</a>
+            <a class="btn" href="https://github.com/juelg" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/juelg" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
+            <a class="btn" href="mailto:tobias@juelg.net"><svg><use href="#i-mail"/></svg>Email</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="assets/img/tobias.jpg" alt="Portrait of Tobias Jülg" width="800" height="800">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PUBLICATIONS ============================== -->
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected Publications</p>
+            <h2 class="section-title">Papers</h2>
+          </div>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=sZWmnMsAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener"><svg><use href="#i-scholar"/></svg>Full list on Scholar</a>
+        </div>
+
+        <div class="papers">
+
+          <!-- ---------- DuoBench ---------- -->
+          <article class="paper paper--featured reveal" id="duobench">
+            <div class="paper-media">
+              <div class="media-main staged">
+                <img class="stage-figure" src="assets/papers/duobench/teaser_overview_fig1.jpg" alt="DuoBench overview: task categories, 3D-printed assemblies, XR teleoperation, stage decomposition" loading="lazy">
+                <video class="stage-video" data-stage-src="assets/papers/duobench/task_carry_pot.mp4" muted loop playsinline aria-label="Two Franka arms jointly carrying a pot in simulation"></video>
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+              <div class="media-thumbs">
+                <button class="media-thumb is-active" type="button" data-type="image" data-fit="contain" data-src="assets/papers/duobench/teaser_overview_fig1.jpg" data-alt="DuoBench overview"><img src="assets/papers/duobench/teaser_overview_fig1.jpg" alt="" loading="lazy"></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/duobench/task_carry_pot.mp4"><span class="thumb-video">▶ Carry-Pot</span></button>
+                <button class="media-thumb" type="button" data-type="image" data-fit="contain" data-src="assets/papers/duobench/setup_real_vs_sim_fig2.jpg" data-alt="Real FR3 Duo setup next to its MuJoCo twin"><img src="assets/papers/duobench/setup_real_vs_sim_fig2.jpg" alt="" loading="lazy"></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/duobench/rollout_ball_maze_real_episode_0.mp4"><span class="thumb-video">▶ Real robot</span></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/duobench/task_transfer_cube.mp4"><span class="thumb-video">▶ Handoff</span></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/duobench/task_pour_marbles.mp4"><span class="thumb-video">▶ Pour</span></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/duobench/rollout_bin_sort_episode_024_success.mp4"><span class="thumb-video">▶ Bin-Sort</span></button>
+                <button class="media-thumb" type="button" data-type="image" data-fit="contain" data-src="assets/papers/duobench/results_sim_stage_failures_fig3.png" data-alt="Stage at which simulated rollouts fail, per policy and task"><img src="assets/papers/duobench/results_sim_stage_failures_fig3.png" alt="" loading="lazy"></button>
+              </div>
+            </div>
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="venue">arXiv 2026</span>
+                <span class="year">Preprint</span>
+              </div>
+              <h3 class="paper-title"><a href="https://duobench.github.io/" target="_blank" rel="noopener">DuoBench: A Reproducible Benchmark for Bimanual Manipulation in Simulation and the Real World</a></h3>
+              <p class="authors"><span class="me">Tobias Jülg</span>, Seongjin Bien, Simon Hilber, Yannik Blei, Pierre Krack, Maximilian Li, Sven Parusel, Rudolf Lioutikov, Florian Walter, Wolfram Burgard</p>
+              <p class="paper-desc">
+                Two-armed manipulation is hard to compare across labs because tasks, hardware and metrics all differ.
+                DuoBench offers 11 bimanual tasks on the Franka Research 3 Duo, covering asymmetric support, joint
+                manipulation, sequential handoff and parallel execution. All tasks run as MuJoCo Gymnasium environments,
+                and four can be rebuilt in the real world from 3D-printed parts. A stage-based evaluation shows
+                <em>where</em> a policy fails, not just whether it fails.
+              </p>
+              <ul class="highlights">
+                <li>Includes 750 teleoperated demonstrations (443k frames) across simulation and real tasks</li>
+                <li>ACT, π<sub>0.5</sub> and X-VLA reach only 7–13% overall success, so the benchmark is far from solved</li>
+                <li>Mixing simulated and real data raises π<sub>0.5</sub> on the real Transfer-Cube task from 40% to 53%</li>
+              </ul>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2606.11901" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://duobench.github.io/" target="_blank" rel="noopener"><svg><use href="#i-globe"/></svg>Project</a>
+                <a class="chip" href="https://github.com/RobotControlStack/duobench" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://pypi.org/project/duobench/" target="_blank" rel="noopener"><svg><use href="#i-pypi"/></svg>PyPI</a>
+                <a class="chip" href="https://huggingface.co/datasets/RobotControlStack/duobench" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Data</a>
+                <button class="chip" type="button" data-bibtex="bib-duobench" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-duobench">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@misc{duobench,
+  title={{DuoBench}: A Reproducible Benchmark for Bimanual Manipulation in Simulation and the Real World},
+  author={Tobias J{\"u}lg and Seongjin Bien and Simon Hilber and Yannik Blei and Pierre Krack and Maximilian Li and Sven Parusel and Rudolf Lioutikov and Florian Walter and Wolfram Burgard},
+  year={2026},
+  eprint={2606.11901},
+  archivePrefix={arXiv}
+}</pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- Robot Control Stack ---------- -->
+          <article class="paper reveal" id="rcs">
+            <div class="paper-media">
+              <div class="media-main staged">
+                <img class="stage-figure" src="assets/papers/rcs/teaser.png" alt="RCS ecosystem: robots, sensors and applications" loading="lazy">
+                <video class="stage-video" data-stage-src="assets/papers/rcs/demo_grid.mp4" muted loop playsinline aria-label="Robot Control Stack running on many robots and tasks"></video>
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+              <div class="media-thumbs">
+                <button class="media-thumb is-active" type="button" data-type="image" data-fit="contain" data-src="assets/papers/rcs/teaser.png" data-alt="RCS ecosystem: robots, sensors and applications"><img src="assets/papers/rcs/teaser.png" alt="" loading="lazy"></button>
+                <button class="media-thumb" type="button" data-type="video" data-src="assets/papers/rcs/demo_grid.mp4"><span class="thumb-video">▶ Overview</span></button>
+              </div>
+            </div>
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="venue">ICRA 2026</span>
+                <span class="year">IEEE Int. Conf. on Robotics &amp; Automation</span>
+              </div>
+              <h3 class="paper-title"><a href="https://robotcontrolstack.github.io/" target="_blank" rel="noopener">Robot Control Stack: A Lean Ecosystem for Robot Learning at Scale</a></h3>
+              <p class="authors"><span class="me">Tobias Jülg</span>, Pierre Krack, Seongjin Bien, Yannik Blei, Khaled Gamal, Ken Nakahara, Johannes Hechtl, Roberto Calandra, Wolfram Burgard, Florian Walter</p>
+              <p class="paper-desc">
+                VLAs and RL need lots of data and constant switching between simulation and real hardware, but
+                classic robot software stacks were never designed for that workflow. RCS is a lean, ROS-free, pip-installable
+                ecosystem with a layered C++/Python architecture. It exposes one Gymnasium interface for both MuJoCo
+                digital twins and real robots, with teleoperation, data recording and VLA inference built in.
+              </p>
+              <ul class="highlights">
+                <li>Supports four embodiments (Franka FR3, xArm7, UR5e, SO101), each with a digital twin</li>
+                <li>Evaluates Octo, OpenVLA and π<sub>0</sub> across robots. Adding simulated data improves real-world VLA success</li>
+                <li>Records data at control rates of 90–120&nbsp;Hz</li>
+              </ul>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2509.14932" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://robotcontrolstack.github.io/" target="_blank" rel="noopener"><svg><use href="#i-globe"/></svg>Project</a>
+                <a class="chip" href="https://github.com/RobotControlStack/robot-control-stack" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://pypi.org/project/rcs-core/" target="_blank" rel="noopener"><svg><use href="#i-pypi"/></svg>PyPI</a>
+                <a class="chip" href="https://robotcontrolstack.org" target="_blank" rel="noopener"><svg><use href="#i-book"/></svg>Docs</a>
+                <a class="chip" href="https://robotcontrolstack.github.io/static/videos/rcs_3min_overview.mp4" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg>3-min Video</a>
+                <button class="chip" type="button" data-bibtex="bib-rcs" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-rcs">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@inproceedings{juelg2026robotcontrolstack,
+  title={{Robot Control Stack}: {A} Lean Ecosystem for Robot Learning at Scale},
+  author={Tobias J{\"u}lg and Pierre Krack and Seongjin Bien and Yannik Blei and Khaled Gamal and Ken Nakahara and Johannes Hechtl and Roberto Calandra and Wolfram Burgard and Florian Walter},
+  booktitle={Proc.~of the IEEE Int.~Conf.~on Robotics \&amp; Automation (ICRA)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- Refined Policy Distillation ---------- -->
+          <article class="paper reveal" id="rpd">
+            <div class="paper-media">
+              <div class="media-main staged">
+                <img class="stage-figure" src="assets/papers/rpd/rpd_method_overview_hires.png" alt="RPD method: RL student guided by a VLA teacher" loading="lazy">
+                <video class="stage-video contain" data-stage-src="assets/papers/rpd/liftpeg_rpd_octo.mp4" muted loop playsinline aria-label="RPD student solving LiftPegUpright in ManiSkill3"></video>
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+              <div class="media-thumbs">
+                <button class="media-thumb is-active" type="button" data-type="image" data-fit="contain" data-src="assets/papers/rpd/rpd_method_overview_hires.png" data-alt="RPD method: RL student guided by a VLA teacher"><img src="assets/papers/rpd/rpd_method_overview_hires.png" alt="" loading="lazy"></button>
+                <button class="media-thumb" type="button" data-type="video" data-fit="contain-dark" data-src="assets/papers/rpd/liftpeg_rpd_octo.mp4"><span class="thumb-video">▶ LiftPeg</span></button>
+              </div>
+            </div>
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="venue">IROS 2025</span>
+                <span class="year">IEEE/RSJ Int. Conf. on Intelligent Robots and Systems</span>
+              </div>
+              <h3 class="paper-title"><a href="https://refined-policy-distillation.github.io" target="_blank" rel="noopener">Refined Policy Distillation: From VLA Generalists to RL Experts</a></h3>
+              <p class="authors"><span class="me">Tobias Jülg</span>, Wolfram Burgard, Florian Walter</p>
+              <p class="paper-desc">
+                Large VLAs generalize well but are slow and often not reliable enough on a specific task. RPD distills
+                a VLA teacher (Octo or OpenVLA) into a compact RL expert. A PPO student is regularized toward the
+                teacher's actions, so the VLA guides exploration while the student keeps improving through its own
+                interaction.
+              </p>
+              <ul class="highlights">
+                <li>Students outperform their VLA teachers on ManiSkill3 tasks, with dense and sparse rewards</li>
+                <li>Converge faster than plain PPO and stay robust to camera viewpoint changes</li>
+                <li>Fine-tuned Octo and OpenVLA checkpoints and the dataset are released on Hugging Face</li>
+              </ul>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2503.05833" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://refined-policy-distillation.github.io" target="_blank" rel="noopener"><svg><use href="#i-globe"/></svg>Project</a>
+                <a class="chip" href="https://github.com/Refined-Policy-Distillation/RPD" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://huggingface.co/datasets/Juelg/RPD-maniskill" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Data &amp; Models</a>
+                <button class="chip" type="button" data-bibtex="bib-rpd" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-rpd">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@inproceedings{juelg2025refinedpolicydistillationvla,
+  title={{Refined Policy Distillation}: {F}rom {VLA} Generalists to {RL} Experts},
+  author={Tobias J{\"u}lg and Wolfram Burgard and Florian Walter},
+  booktitle={Proc.~of the IEEE/RSJ Int.~Conf.~on Intelligent Robots and Systems (IROS)},
+  year={2025}
+}</pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- ARRO ---------- -->
+          <article class="paper reveal" id="arro">
+            <div class="paper-media">
+              <div class="media-main contain-dark">
+                <video data-src="assets/papers/arro/arro_grid.mp4" muted loop playsinline aria-label="ARRO overview: training scene, masked view, ARRO view and changed inference scene"></video>
+              </div>
+            </div>
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="venue">RA-L 2026</span>
+                <span class="year">IEEE Robotics and Automation Letters</span>
+              </div>
+              <h3 class="paper-title"><a href="https://augmented-reality-for-robots.github.io/" target="_blank" rel="noopener">Augmented Reality for RObots (ARRO): Pointing Visuomotor Policies Towards Visual Robustness</a></h3>
+              <p class="authors">Reihaneh Mirjalili, <span class="me">Tobias Jülg</span>, Florian Walter, Wolfram Burgard</p>
+              <p class="paper-desc">
+                Visuomotor policies break when the background, lighting or clutter changes. ARRO uses open-vocabulary
+                segmentation to keep only the gripper and the task-relevant objects, and composites them onto a fixed
+                virtual grid background. This happens in real time, during both training and inference, with no extra
+                training or calibration.
+              </p>
+              <ul class="highlights">
+                <li>Works with Diffusion Policy, Octo, OpenVLA and π<sub>0</sub>, in simulation and on a real robot</li>
+                <li>With distractors present, success rises from 30% (vanilla) to 90%</li>
+                <li>Enables real-to-sim and cross-embodiment transfer</li>
+              </ul>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2505.08627" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://augmented-reality-for-robots.github.io/" target="_blank" rel="noopener"><svg><use href="#i-globe"/></svg>Project</a>
+                <a class="chip" href="https://youtu.be/FWC8U7WeRFk" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg>Video</a>
+                <a class="chip" href="https://doi.org/10.1109/LRA.2026.3665444" target="_blank" rel="noopener"><svg><use href="#i-book"/></svg>IEEE</a>
+                <button class="chip" type="button" data-bibtex="bib-arro" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-arro">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@article{arro,
+  author={Mirjalili, Reihaneh and J{\"u}lg, Tobias and Walter, Florian and Burgard, Wolfram},
+  journal={IEEE Robotics and Automation Letters},
+  title={Augmented Reality for RObots (ARRO): Pointing Visuomotor Policies Towards Visual Robustness},
+  year={2026},
+  volume={11},
+  number={4},
+  pages={4785-4792},
+  doi={10.1109/LRA.2026.3665444}
+}</pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- FlowTouch ---------- -->
+          <article class="paper reveal" id="flowtouch">
+            <div class="paper-media">
+              <div class="media-main contain">
+                <img src="assets/papers/flowtouch/flowtouch_teaser.png" alt="FlowTouch: a robot imagines the tactile readings of a grasp before touching the object" loading="lazy">
+              </div>
+            </div>
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="venue">IROS 2026</span>
+                <span class="year">IEEE/RSJ Int. Conf. on Intelligent Robots and Systems</span>
+              </div>
+              <h3 class="paper-title"><a href="https://flowtouch.github.io/" target="_blank" rel="noopener">FlowTouch: View-Invariant Visuo-Tactile Prediction</a></h3>
+              <p class="authors">Seongjin Bien, Carlo Kneissl, <span class="me">Tobias Jülg</span>, Frank Fundel, Thomas Ressler-Antal, Florian Walter, Björn Ommer, Gitta Kutyniok, Wolfram Burgard</p>
+              <p class="paper-desc">
+                FlowTouch predicts what a vision-based tactile sensor will read before the robot touches anything.
+                Instead of mapping camera images straight to touch, it reconstructs the object's 3D mesh with scene-reconstruction
+                foundation models. A local point cloud around the planned contact then conditions a flow-matching
+                generative model. Because it works from geometry, it is independent of the camera viewpoint and
+                narrows the sim-to-real gap.
+              </p>
+              <ul class="highlights">
+                <li>Predicted tactile images reach 86% grasp-stability accuracy, on par with real sensor readings</li>
+                <li>Reaches 81% zero-shot, without any samples from the target grasp dataset</li>
+                <li>Generalizes to a sensor instance never seen in training on a real FR3 with DIGIT sensors</li>
+              </ul>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2603.08255" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://flowtouch.github.io/" target="_blank" rel="noopener"><svg><use href="#i-globe"/></svg>Project</a>
+                <button class="chip" type="button" data-bibtex="bib-flowtouch" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-flowtouch">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@inproceedings{flowtouch,
+  title={{FlowTouch}: View-Invariant Visuo-Tactile Prediction},
+  author={Seongjin Bien and Carlo Kneissl and Tobias J{\"u}lg and Frank Fundel and Thomas Ressler-Antal and Florian Walter and Bj{\"o}rn Ommer and Gitta Kutyniok and Wolfram Burgard},
+  booktitle={Proc.~of the IEEE/RSJ Int.~Conf.~on Intelligent Robots and Systems (IROS)},
+  year={2026}
+}</pre>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- ---------- More publications (compact) ---------- -->
+        <h3 class="subhead reveal">More publications</h3>
+        <div class="pubs-compact">
+          <article class="pub-compact reveal" id="belle2">
+            <a class="pub-thumb" href="https://arxiv.org/abs/2402.14962" target="_blank" rel="noopener">
+              <img src="assets/papers/belle2/nn-architecture.png" alt="Architecture of the single-hidden-layer neural network: 27 inputs from 9 superlayers, 81 hidden nodes, outputs z and theta" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <div class="paper-meta">
+                <span class="venue venue--muted">NIM A 2025</span>
+                <span class="year">Nuclear Instruments and Methods in Physics Research A</span>
+              </div>
+              <h4 class="pub-title"><a href="https://doi.org/10.1016/j.nima.2025.170279" target="_blank" rel="noopener">The Neural Network First-Level Hardware Track Trigger of the Belle II Experiment</a></h4>
+              <p class="authors">S. Bähr, H. Bae, J. Becker, … , <span class="me">T. Jülg</span>, … , K. Unger, J. Yin</p>
+              <p class="paper-desc">Small neural networks running on FPGAs estimate each particle track's origin along the beam
+                within the microsecond budget of Belle II's first-level trigger. This lets the trigger reject background
+                events in hardware while keeping physics events.</p>
+              <div class="paper-links">
+                <a class="chip" href="https://arxiv.org/abs/2402.14962" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <a class="chip" href="https://doi.org/10.1016/j.nima.2025.170279" target="_blank" rel="noopener"><svg><use href="#i-book"/></svg>Journal</a>
+                <button class="chip" type="button" data-bibtex="bib-belle2" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-belle2">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@article{baehr2025neural,
+  title={The neural network first-level hardware track trigger of the {Belle II} experiment},
+  author={B{\"a}hr, S. and Bae, H. and Becker, J. and Bertemes, M. and Campajola, M. and Ferber, T. and Forsthofer, T. and Hiesl, S. and Inguglia, G. and Iwasaki, Y. and J{\"u}lg, T. and Kiesling, C. and Knoll, A. C. and Koga, T. and Lai, Y.-T. and Lenz, A. and Liu, Y. and Meggendorfer, F. and Nakazawa, H. and Neu, M. and Schieck, J. and Schmidt, E. and Shiu, J.-G. and Skambraks, S. and Unger, K. and Yin, J.},
+  journal={Nuclear Instruments and Methods in Physics Research Section A},
+  volume={1073},
+  pages={170279},
+  year={2025},
+  doi={10.1016/j.nima.2025.170279}
+}</pre>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub-compact reveal" id="mmrl">
+            <a class="pub-thumb" href="https://doi.org/10.18910/92312" target="_blank" rel="noopener">
+              <img src="assets/papers/mmrl/som-ae-architecture.png" alt="SOM-AE architecture: an autoencoder compresses images into an 8-dimensional latent that feeds a multi-modal self-organizing map" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <div class="paper-meta">
+                <span class="venue venue--muted">AMAM 2023</span>
+                <span class="year">Int. Symposium on Adaptive Motion of Animals and Machines</span>
+              </div>
+              <h4 class="pub-title"><a href="https://doi.org/10.18910/92312" target="_blank" rel="noopener">Multi-Modal Representation Learning for Mapping Between Body Motion and Visual Imagery</a></h4>
+              <p class="authors"><span class="me">Tobias Jülg</span>, Florian Walter, Dongmin Kim, Hoshinori Kanazawa, Alois Knoll, Yasuo Kuniyoshi</p>
+              <p class="paper-desc">A multi-modal self-organizing map learns how a simulated infant's arm movements relate to what it
+                sees. Compressing the images with an autoencoder first shrinks the map from 10.5&nbsp;GB to 33&nbsp;MB and
+                cuts training from 61&nbsp;h to 15&nbsp;min, with equal or better mapping quality.</p>
+              <div class="paper-links">
+                <a class="chip" href="https://ir.library.osaka-u.ac.jp/repo/ouka/all/92312/P57-AMAM2023-juelg.pdf" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+                <button class="chip" type="button" data-bibtex="bib-mmrl" aria-expanded="false"><svg><use href="#i-quote"/></svg>BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-mmrl">
+                <button class="copy-btn" type="button">Copy</button>
+<pre>@inproceedings{juelg2023multimodal,
+  title={Multi-Modal Representation Learning for Mapping Between Body Motion and Visual Imagery},
+  author={J{\"u}lg, Tobias and Walter, Florian and Kim, Dongmin and Kanazawa, Hoshinori and Knoll, Alois and Kuniyoshi, Yasuo},
+  booktitle={The 11th International Symposium on Adaptive Motion of Animals and Machines (AMAM)},
+  pages={150--151},
+  year={2023},
+  doi={10.18910/92312}
+}</pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SOFTWARE ============================== -->
+    <section class="section" id="software">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Open Source</p>
+            <h2 class="section-title">Software</h2>
+          </div>
+          <a class="btn" href="https://github.com/juelg" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>More on GitHub</a>
+        </div>
+        <div class="software-grid">
+          <article class="sw-card reveal">
+            <div class="sw-media contain"><img src="assets/projects/vlagents_overview.png" alt="VLAgents architecture: environments talk to a policy server over shared memory or TCP" loading="lazy"></div>
+            <div class="sw-body">
+              <h3>VLAgents</h3>
+              <p>A policy server for efficient VLA inference. Policies such as Octo, OpenVLA, π<sub>0</sub> and LeRobot sit behind one
+                Gymnasium-style protocol. It uses zero-copy shared memory in simulation and compressed TCP streaming for remote robots.</p>
+              <div class="paper-links">
+                <a class="chip" href="https://github.com/RobotControlStack/vlagents" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://pypi.org/project/vlagents/" target="_blank" rel="noopener"><svg><use href="#i-pypi"/></svg>PyPI</a>
+                <a class="chip" href="https://arxiv.org/abs/2601.11250" target="_blank" rel="noopener"><svg><use href="#i-paper"/></svg>Paper</a>
+              </div>
+            </div>
+          </article>
+          <article class="sw-card reveal">
+            <div class="sw-media"><video data-src="assets/projects/frankik_demo.mp4" muted loop playsinline aria-label="FrankIK demo"></video></div>
+            <div class="sw-body">
+              <h3>FrankIK</h3>
+              <p>A fast analytical inverse kinematics solver for Franka Panda and FR3, written in C++ with Python bindings.
+                Each query takes about 6.5&nbsp;µs, roughly 2× faster than the fastest Python IK library.</p>
+              <div class="paper-links">
+                <a class="chip" href="https://github.com/juelg/frankik" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://pypi.org/project/frankik/" target="_blank" rel="noopener"><svg><use href="#i-pypi"/></svg>PyPI</a>
+              </div>
+            </div>
+          </article>
+          <article class="sw-card reveal">
+            <div class="sw-media sw-terminal" aria-hidden="true">
+<pre><span class="t-dim"># ROS-free Robotiq 2F-85 driver</span>
+<span class="t-prompt">$</span> pip install robotiq2f
+<span class="t-dim"># list grippers by serial no.</span>
+<span class="t-prompt">$</span> python -m robotiq2f</pre>
+            </div>
+            <div class="sw-body">
+              <h3>robotiq2f</h3>
+              <p>A pure-Python, ROS-free driver for the Robotiq 2F-85 gripper over Modbus RTU. It finds the device by serial number
+                (so it still works after replugging), with non-blocking status polling and TCP-offset compensation.</p>
+              <div class="paper-links">
+                <a class="chip" href="https://github.com/RobotControlStack/robotiq2f" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+                <a class="chip" href="https://pypi.org/project/robotiq2f/" target="_blank" rel="noopener"><svg><use href="#i-pypi"/></svg>PyPI</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== DATASETS ============================== -->
+    <section class="section" id="datasets">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Open Data</p>
+            <h2 class="section-title">Datasets</h2>
+          </div>
+          <a class="btn" href="https://huggingface.co/RobotControlStack" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>More on Hugging Face</a>
+        </div>
+        <div class="software-grid">
+          <article class="ds-card reveal">
+            <div class="ds-media">
+              <div class="media-main staged ds-staged">
+                <img class="stage-figure" src="assets/datasets/duobench/contact-sheet.jpg" alt="Head-camera frames from eight DuoBench tasks, real and simulated" loading="lazy">
+                <img class="stage-video contain" data-stage-src="assets/datasets/duobench/episode-transfer-cube-real.webp" alt="Real Transfer-Cube episode from head and both wrist cameras">
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="sw-body">
+              <h3>DuoBench FR3 Duo</h3>
+              <p>Teleoperated bimanual demonstrations on a dual Franka Research 3. It covers 11 simulated and 4 real tasks, with a language instruction per task, in LeRobot format ready for training.</p>
+              <ul class="ds-stats"><li>750 episodes</li><li>446k frames</li><li>30 fps</li><li>3 cameras</li><li>LeRobot v3</li><li>4.5 GB</li></ul>
+              <div class="paper-links">
+                <a class="chip" href="https://huggingface.co/datasets/RobotControlStack/duobench" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Hugging Face</a>
+                <a class="chip" href="https://huggingface.co/datasets/RobotControlStack/duobench_raw" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Raw (RCS)</a>
+                <a class="chip" href="#duobench"><svg><use href="#i-paper"/></svg>Paper</a>
+              </div>
+            </div>
+          </article>
+          <article class="ds-card reveal">
+            <div class="ds-media">
+              <div class="media-main staged ds-staged">
+                <img class="stage-figure" src="assets/datasets/green-box/contact-sheet.jpg" alt="Third-person and wrist camera frames of a Franka picking a green box" loading="lazy">
+                <img class="stage-video contain" data-stage-src="assets/datasets/green-box/episode-74.webp" alt="One teleoperated pick episode, third-person and wrist camera">
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="sw-body">
+              <h3>Green Box Pick (FR3)</h3>
+              <p>Real-world teleoperated Franka FR3 demonstrations of the task "pick the green box", recorded with RCS. Used to fine-tune Octo, OpenVLA and &pi;<sub>0</sub> in the RCS paper.</p>
+              <ul class="ds-stats"><li>143 episodes</li><li>36.7k frames</li><li>10 fps</li><li>2 cameras</li><li>LeRobot v2.1</li><li>5.3 GB</li></ul>
+              <div class="paper-links">
+                <a class="chip" href="https://huggingface.co/datasets/RobotControlStack/rcs_utn_green_box_lerobot" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Hugging Face</a>
+                <a class="chip" href="https://huggingface.co/datasets/RobotControlStack/rcs_utn_green_box_v1" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Raw (RCS)</a>
+                <a class="chip" href="#rcs"><svg><use href="#i-paper"/></svg>Paper</a>
+              </div>
+            </div>
+          </article>
+          <article class="ds-card reveal">
+            <div class="ds-media">
+              <div class="media-main staged ds-staged">
+                <img class="stage-figure" src="assets/datasets/rpd-maniskill/contact-sheet.jpg" alt="Frames from six ManiSkill3 tasks: PickCube, PushCube, PullCube, LiftPegUpright, RollBall, PushT" loading="lazy">
+                <img class="stage-video contain" data-stage-src="assets/datasets/rpd-maniskill/episode-pusht.webp" alt="One PushT episode from both cameras">
+                <span class="stage-progress" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="sw-body">
+              <h3>ManiSkill3 in RLDS</h3>
+              <p>ManiSkill3 demonstrations of a simulated Franka Panda, converted to RLDS so VLAs like Octo and OpenVLA can be fine-tuned on them. Used for the RPD teachers.</p>
+              <ul class="ds-stats"><li>7,993 episodes</li><li>Pick · Push · Pull · Lift · Roll · PushT</li><li>RLDS / TFDS</li><li>45 GB</li></ul>
+              <div class="paper-links">
+                <a class="chip" href="https://huggingface.co/datasets/Juelg/RPD-maniskill" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Hugging Face</a>
+                <a class="chip" href="https://huggingface.co/Juelg/octo-base-1.5-finetuned-maniskill" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>Octo</a>
+                <a class="chip" href="https://huggingface.co/Juelg/openvla-7b-finetuned-maniskill" target="_blank" rel="noopener"><svg><use href="#i-data"/></svg>OpenVLA</a>
+                <a class="chip" href="#rpd"><svg><use href="#i-paper"/></svg>Paper</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT / TIMELINE ============================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Background</p>
+            <h2 class="section-title">Positions &amp; Education</h2>
+          </div>
+        </div>
+        <div class="timeline-grid">
+          <div class="reveal">
+            <h3 class="timeline-head">Research &amp; Industry</h3>
+            <ol class="timeline">
+              <li class="is-current">
+                <span class="tl-date">06/2026 – now</span>
+                <span class="tl-role">PhD Research Intern</span>
+                <span class="tl-org">Allen Institute for AI (Ai2) · Robotics, Seattle</span>
+                <span class="tl-note">Advisor: Dieter Fox</span>
+              </li>
+              <li class="is-current">
+                <span class="tl-date">10/2023 – now</span>
+                <span class="tl-role">Doctoral Researcher</span>
+                <span class="tl-org">UTN · Lab for AI &amp; Robotics, Nuremberg</span>
+                <span class="tl-note">Advisor: Wolfram Burgard</span>
+              </li>
+              <li>
+                <span class="tl-date">12/2021 – 09/2022</span>
+                <span class="tl-role">Machine Learning Intern</span>
+                <span class="tl-org">Max Planck Institute of Physics · Belle II, Munich</span>
+              </li>
+              <li>
+                <span class="tl-date">05/2021 – 07/2022</span>
+                <span class="tl-role">Deep Learning Intern</span>
+                <span class="tl-org">Cruise · Radar perception, Munich</span>
+              </li>
+            </ol>
+          </div>
+          <div class="reveal">
+            <h3 class="timeline-head">Education</h3>
+            <ol class="timeline">
+              <li class="is-current">
+                <span class="tl-date">10/2023 – now</span>
+                <span class="tl-role">Ph.D. in Robotics</span>
+                <span class="tl-org">University of Technology Nuremberg (UTN)</span>
+              </li>
+              <li>
+                <span class="tl-date">10/2022 – 03/2023</span>
+                <span class="tl-role">Visiting Research Graduate</span>
+                <span class="tl-org">The University of Tokyo · Intelligent Systems and Informatics Lab</span>
+                <span class="tl-note">Master's thesis</span>
+              </li>
+              <li>
+                <span class="tl-date">10/2020 – 09/2023</span>
+                <span class="tl-role">M.Sc. Informatics</span>
+                <span class="tl-org">Technical University of Munich (TUM)</span>
+                <span class="tl-note">Grade 1.0, high distinction (top 2%)</span>
+              </li>
+              <li>
+                <span class="tl-date">10/2016 – 05/2020</span>
+                <span class="tl-role">B.Sc. Informatics</span>
+                <span class="tl-org">Technical University of Munich (TUM)</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Tobias Jülg</p>
+      <div class="socials">
+        <a class="icon-btn" href="https://github.com/juelg" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/juelg" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+        <a class="icon-btn" href="https://scholar.google.com/citations?hl=en&amp;user=sZWmnMsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><svg><use href="#i-scholar"/></svg></a>
+        <a class="icon-btn" href="mailto:tobias@juelg.net" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
